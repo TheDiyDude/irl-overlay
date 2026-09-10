@@ -94,3 +94,5 @@ If you don't have a Traccar server running yet, the quickest and cleanest way to
 
 **Marc-Oliver Blumenauer**  
 Email: [marc@l3c.de](mailto:marc@l3c.de)
+If you want to get me a cup of coffee I appreciate: [https://ko-fi.com/randvieh](https://ko-fi.com/randvieh)
+
