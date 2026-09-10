@@ -63,7 +63,7 @@ If you prefer checking the "Local File" box in OBS, you need to bypass the secur
 
 ---
 
-## Bonus: Setting up Traccar with Docker
+## If not already installed: Setting up Traccar with Docker
 
 If you don't have a Traccar server running yet, the quickest and cleanest way to deploy one is using Docker. 
 
