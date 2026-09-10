@@ -60,3 +60,37 @@ If you prefer checking the "Local File" box in OBS, you need to bypass the secur
 --disable-web-security
 ```
 *(Note: Use this start parameter at your own risk, as it disables security checks for all browser sources in OBS).*
+
+---
+
+## Bonus: Setting up Traccar with Docker
+
+If you don't have a Traccar server running yet, the quickest and cleanest way to deploy one is using Docker. 
+
+1. Create a directory for your Traccar setup and navigate into it:
+   ```bash
+   mkdir traccar && cd traccar
+   ```
+2. Download the default configuration file:
+   ```bash
+   wget https://raw.githubusercontent.com/traccar/traccar/master/setup/default.xml -O traccar.xml
+   ```
+3. Run the Traccar container:
+   ```bash
+   docker run -d --restart always \
+     --name traccar \
+     -p 8082:8082 \
+     -p 5000-5150:5000-5150 \
+     -p 5000-5150:5000-5150/udp \
+     -v $(pwd)/logs:/opt/traccar/logs \
+     -v $(pwd)/traccar.xml:/opt/traccar/conf/traccar.xml \
+     traccar/traccar:latest
+   ```
+*(Note: If you are running this on a cloud VPS, consider blocking public access to port 8082 via your firewall and using the SSH tunnel method described above for safe local access).*
+
+---
+
+## Contact
+
+**Marc-Oliver Blumenauer**  
+Email: [marc@l3c.de](mailto:marc@l3c.de)
